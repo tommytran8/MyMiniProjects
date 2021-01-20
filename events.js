@@ -1,5 +1,7 @@
 const pages = document.querySelectorAll(".page");
 const page2 = document.querySelector(".nextpage");
+const icons = document.querySelectorAll(".link-icons img");
+const projects = document.querySelectorAll(".project");
 let scrollSlide = 0;
 let current = 0;
 nextSlide(0)
@@ -32,7 +34,7 @@ function scrollChange(e) {
     if (scrollSlide < 0) {
       scrollSlide = 0;
     }
-    nextSlide(scrollSlide);
+    nextSlide(scrollSlide); 
   }
 
   function throttle(func, limit) {
