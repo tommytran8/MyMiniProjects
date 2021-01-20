@@ -7,6 +7,13 @@ body{
     color: white;
     background: black;
     font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+.page{
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 main {
@@ -31,22 +38,58 @@ main > div {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
-.intro img{
+.intro{
+    visibility: visible;
+    pointer-events: all;
+}
+.intro > img{
     margin-bottom: 2vh;
 }
-.about{
-    margin-top: 45vh;
+.link-icons{
+    width: 45vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-.about > h1{
+
+.link-icons img{
+    cursor: pointer;
+    margin-top: 3vh;
+    filter: invert(100%);  
+    /* transition: all 0.3s ease-in-out 0.1s;   */
+}
+.link-icons img:hover{
+    transform: scale(1.3);
+}
+.link-icons #git-png:hover{
+    transform: scale(1.4);
+}
+.intro h3{
+    margin-top: 20vh;
+    font-size: 4vh;
+    color: white;
+    cursor: pointer;
+}
+
+.intro h3:hover{
+    animation: hover 2s ease-in-out infinite 0.1s;   
+}
+
+#about > h1{
     font-size: 6vh;
 }
+.project-title{
+    margin-top: 5vh;
+}
+
 #me{
     border-radius: 50%;
 }
 .content{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     
     
 }
@@ -57,99 +100,14 @@ main > div {
     min-height:100px; 
     border: solid white; 
     border-radius: 20%;
-    margin: 5px 5px;
+    margin: 10px 10px;
 }
 
 /* @keyframes welcome{
     from {opacity: 0;}
     to {opacity: 1;}
 } */
-.nav-bar{
-    width: 100%;
-    height: 10vh;
-    background-color: rgb(42, 42, 42);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.nav-bar h2{
-    margin-left: 5vh;
-}
-.links {
-    width: 30%;
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: auto;
-    
-}
-.links a, .links p{
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    transition: all 0.5 ease;
-}
-.links a:hover, .links p:hover{
-    color: rgb(165, 163, 163);
-}
 
-.projectsbar {
-    position: absolute;
-    width: 15%;
-    height: 50vh;
-    background: rgb(42, 42, 42);
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 3.6vh;
-    
-
-}
-.projectsbar.open{
-    visibility: visible;
-}
-.projectsbar.close, .contactsbar.close{
-    visibility: hidden;
-}
-.contactsbar{
-    position: absolute;
-    width: 15%;
-    height: 50vh;
-    background: rgb(42, 42, 42);
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 3.6vh;
-    transform: translateX(-61%);
-}
-.contactsbar.open{
-    visibility: visible;
-}
-.contactsbar a{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#linkedin {
-    width: 9vh;
-    height: 6vh;
-}
-
-.hello{
-    position: relative;
-    width: 60%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .arrow{
     margin: 0 5vh;
@@ -160,8 +118,8 @@ main > div {
     animation: hover 2s ease-in-out infinite;
 }
 @keyframes hover {
-    0% {transform: scale(.3);}
-    50% {transform: scale(.45);}
-    100% {transform: scale(.3);}
+    0% {transform: scale(1);}
+    50% {transform: scale(1.12);}
+    100% {transform: scale(1);}
 }
 
