@@ -1,7 +1,7 @@
 let scrollSlide = 0;
 
-document.addEventListener("wheel", throttle(scrollChange, 500));
-document.addEventListener("touchmove", throttle(scrollChange, 500));
+document.addEventListener("wheel", throttle(scrollChange, 300));
+document.addEventListener("touchmove", throttle(scrollChange, 300));
 function scrollChange(e) {
     if (e.deltaY > 0) {
       scrollSlide += 1;

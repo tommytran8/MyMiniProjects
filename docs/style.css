@@ -5,11 +5,11 @@
 }
 body{
     color: white;
-    background: black;
     font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
     overflow: hidden;
 }
+
 .page{
     position: absolute;
 }
@@ -25,17 +25,23 @@ main {
     align-items: center;
     justify-content: space-between;
     padding-top: 5vh;
+    
+    
 }
+
 main h1 {
     margin-bottom: 3vh;
 }
 main > div {
+    opacity: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    animation: enter 1.2s ease 0.1s forwards;
 }
+
 .intro{
     visibility: visible;
     pointer-events: all;
@@ -119,3 +125,7 @@ main > div {
     100% {transform: scale(1);}
 }
 
+@keyframes enter {
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
