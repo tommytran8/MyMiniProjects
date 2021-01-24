@@ -7,7 +7,7 @@ body{
     color: white;
     font-family: 'Lato', sans-serif;
     letter-spacing: 2px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .page{
@@ -129,8 +129,21 @@ main > div {
     from{opacity: 0;}
     to {opacity: 1;}
 }
-@media only screen and (max-width: 60vh) {
- .content{
-    grid-template-columns: auto auto;	
- }
+@media only screen and (max-width: 800px) {
+    .content{
+    	display: grid;
+        grid-template-columns: auto auto;
+    }
+    .about{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: rgb(0,25,230);
+    background: linear-gradient(180deg, rgba(0,25,230,1) 0%, rgba(2,0,36,1) 40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5vh;
+    }
 }
