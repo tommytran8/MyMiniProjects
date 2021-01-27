@@ -71,14 +71,14 @@ function init(){
     document.getElementById("gamestate").innerHTML = "Valid inputs are 1-9";
 }
 function checkValid(){
-    var list = [];
-    var nomoreZeros = true;
+    let list = [];
+    let nomoreZeros = true;
     document.getElementById("gamestate").innerHTML = "Valid inputs are 1-9";
     for (var i = 0; i < 81; i++){
         grid[Math.floor(i/9)][i % 9] = newgame[i];
     }
     for (var i = 0; i < 81; i++){
-        var x = document.getElementById(id[i]).value;
+        let x = document.getElementById(id[i]).value;
         if (x == ""){
             grid[Math.floor(i/9)][i % 9] = "0";
             nomoreZeros = false;
@@ -113,7 +113,7 @@ function solveBoard(){
     for (var i = 0; i < 81; i++){
         grid[Math.floor(i/9)][i % 9] = newgame[i];
     }
-    var solved = solve();
+    let solved = solve();
     for (var row = 0; row < 9; row ++){
         for (var col = 0; col < 9; col++){
             (document.getElementById(id[row*9 + col])).value = grid[row][col];
@@ -138,8 +138,8 @@ function resetBoard(){
 
 //prevents inputting anything other than numbers
 function myFunction() {
-    var e = event || window.event;  // get event object
-    var key = e.keyCode || e.which; // get key cross-browser
+    let e = event || window.event;  // get event object
+    let key = e.keyCode || e.which; // get key cross-browser
     if ((key < 49 || key > 57) && key != 8) { //if it is not a number ascii code (excluding backspace)
         //Prevent default action, which is displaying character
         if (e.preventDefault) e.preventDefault(); //normal browsers
@@ -148,11 +148,11 @@ function myFunction() {
 }
 
 function solve(){
-    var pos = findEmptyPos();
+    let pos = findEmptyPos();
     if (pos == null)
         return true;
-    var row = pos[0]; //var makes it so it is local to function (this was the bug i was stuck on)
-    var col = pos[1]; //var makes it so it is local to function
+    let row = pos[0]; //let makes it so it is local to function (this was the bug i was stuck on)
+    let col = pos[1]; //let makes it so it is local to function
     
     for (var i = 1; i < 10; i++){
         if (isValidNum(row,col,String.fromCharCode(i+48))){
@@ -201,8 +201,8 @@ function validInRow( row, num){
 function validInBox(row, col, num){
     const rowlist = [0,3,6,9];
     const collist = [0,3,6,9];
-    var checkrow = 0;
-    var checkcol = 0;
+    let checkrow = 0;
+    let checkcol = 0;
 
     for (var i = 0; i < 3; i++){
         if (row >= rowlist[i] && row < rowlist[i+1]){
