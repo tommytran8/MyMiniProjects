@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Tommy Tran">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"/>
+        <link rel="icon" type="image/png" href="./assets/mylogo2.png">
+        <title>Tommy</title>
+    </head>
+    <body>
+        <style>
+            nav, .page, .after-progress { display: none; }
+
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: 'Lato', sans-serif;
+            }
+            nav {
+                position: absolute;
+                flex-direction: column;
+                transform: translate(90vw, 100vh);
+                
+            }
+            nav > a {
+                width: 80px;
+                height: 80px;
+                color: white;
+                background-color: #305D9F;
+                border: 2px solid white;
+                border-radius: 5px;
+                margin-bottom: 1px;
+                text-align: center;
+                outline: none;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .page{
+                height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .intro {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                animation: changeColor 0.3s ease-in-out 6.1s forwards;
+            }
+            .p-intro {
+                color:#305D9F;
+                font-weight: bold;
+                font-size: 30px;
+                display: flex;
+            }
+            .welcome {
+                color: white;
+                display: none;
+            }
+            @keyframes changeColor{
+                from {color:#305D9F;}
+                to {background-color: #305D9F;
+                    color: white;}
+            }
+            .p-intro > span:nth-child(1) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .3s ease-in 1.3s forwards;
+            }
+            .p-intro > span:nth-child(2) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .3s ease-in 1.6s forwards;
+            }
+            .p-intro > span:nth-child(3) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 1.9s forwards;
+            }
+            .p-intro > span:nth-child(4) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 2.1s forwards;
+            }
+            .p-intro > span:nth-child(5) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 2.3s forwards;
+            }
+            .p-intro > span:nth-child(6) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 2.5s forwards;
+            }
+            .p-intro > span:nth-child(7) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 2.7s forwards;
+            }
+            .p-intro > span:nth-child(8) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .2s ease-in 2.9s forwards;
+            }
+            .p-intro > span:nth-child(9) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .15s ease-in 3.05s forwards;
+            }
+            .p-intro > span:nth-child(10) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .15s ease-in 3.2s forwards;
+            }
+            .p-intro > span:nth-child(11) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .15s ease-in 3.35s forwards;
+            }
+            .p-intro > span:nth-child(12) {
+                visibility: hidden; 
+                transform: translateY(7vh);
+                animation: pintro .1s ease-in 3.5s forwards;
+            }
+            @keyframes pintro {
+                0% {visibility: hidden; 
+                    transform: translateY(7vh)}
+                100% {visibility: visible; 
+                    transform: translateY(0vh)}
+            }
+            .box-container {
+                width: 70%;
+                height: 45%;
+                overflow: hidden;
+                padding: 3%;
+                animation-name: yesOverflow;
+                animation-delay: 1.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes yesOverflow {
+                from {overflow: hidden;}
+                to {overflow:visible;}
+            }
+            .intro-svg {
+                visibility: hidden;
+                animation: turn 2.5s ease-in 3.6s forwards;
+            }
+            @keyframes turn {
+                0% { visibility: visible; 
+                    transform: translateY(-1000px);
+                }
+                30%{
+                    visibility: visible; 
+                    transform: translateY(0);
+                }
+                60% { visibility: visible; 
+                    transform: rotate(0deg);
+                }
+                95% {
+                    visibility: visible; 
+                    transform: rotate(360deg);
+                }
+                100% { visibility: hidden; 
+                    transform: rotate(360deg);
+                }
+            }
+            .line {
+                width: 100%;
+                height: 20px;
+                background-color: #305D9F;
+                transform: translateY(60vh);
+                animation: intro ease-in-out 1.2s forwards;
+            }
+            @keyframes intro {
+                0% {transform: translateY(60vh)}
+                100% {transform: translateY(0vh)}
+            }
+
+            .about-div {
+                width: 50vw;
+                height: auto;
+            }
+        </style>
+        <nav id="nav-bar">
+            <a id=to-home href="#intro">Home</a>
+            <a id="to-profile"  href="#profile">Profile</a>
+            <a id="to-about"  href="#about">About Me</a>
+            <a id="to-projects"  href="#projects">Projects</a>
+        </nav>
+        <main>
+            <section id="intro" class="page intro">
+                <p id="intro-welcome" class="p-intro welcome">Welcome to my website</p>
+                <svg id="intro-svg" class="intro-svg" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="10" fill="#305D9F"/>
+                    <path d="M70.7344 34.54H55.4902V76H45.2363V34.54H30.1973V26.2344H70.7344V34.54Z" fill="white"/>
+                </svg>
+                    
+                <div id="intro-text"class="box-container">
+                    <p class="p-intro"><span style="margin-right: 5px;">I</span><span>a</span><span style="margin-right: 5px;">m</span> <span>T</span><span>o</span><span>m</span> <span>m</span> <span style="margin-right: 5px;">y</span> <span>T</span> <span>r</span> <span>a</span>  <span>n</span></p>
+                    <div class="line"></div>
+                </div>
+                
+            </section>
+
+            <section class="page profile" id="profile">
+                <p class="title">Profile</p>
+                <img id="me" src="./assets/IMG_3013.JPG" width=175>
+                <p class="title">Tommy Tran</p>
+                <p class="description">Student at UCSD majoring in Mathematics-Computer Science</p>
+                <div class="links">
+                    <a href="https://github.com/tommytran8" target="_blank"><img id="git-png" src="./assets/github.png" alt="Github" height=50></a>
+                    <a href="https://www.linkedin.com/in/tommy-tran-20210b177/" target="_blank"><img id="linkedin-png" src="./assets/linkedin.png" alt="Linkedin" height=50></a>
+                    <a href="https://www.instagram.com/tommy.traan/" target="_blank"><img id="insta-png" src="./assets/insta.jpg" alt="Instagram" height=50></a>
+                    <a href="./assets/Resume.pdf" target="_blank"><img src="./assets/resume.png" alt="Resume" height=50></a>
+                </div>
+            </section>
+                
+            <section class="page about" id="about">
+                
+                <div class="about-div">
+                    <p class="title">About Me</p>
+                    <p class="description">Hi! I'm Tommy Tran. I am a Vietnamese-American that was born and raised in San Diego. I currently attend the University of California, San Diego as a Mathematics-Computer Science major. I am striving to become a software engineer with a focus on full-stack web development.</p>
+                </div>
+                <div class="about-div">
+                    <p class="title">Hobbies</p>
+                    <p class="description">Badminton, Anime, Gaming, and Working Out</p>
+                </div>
+                <div class="about-div">
+                    <div class="skill-div">
+                        <p class="title">Skills</p>
+                        <div class="skill">
+                            <img class="individual-skill" src="assets/javascript.png" alt="Javascript" height=50>
+                            <img class="individual-skill" src="assets/html.png" alt="HTML5" height=50>
+                            <img class="individual-skill" src="assets/css.png" alt="CSS3" height=50>
+                            <p class="description">Javascript, HTML5, CSS</p>
+                        </div>
+                    </div>
+                    <div class="skill-div">
+                        <p class="title">Tools</p>
+                        <div class="skill">
+                            <img class="individual-skill" src="assets/github.png" alt="Github" height=50>
+                            <img class="individual-skill" src="assets/vscode.png" alt="VSCode" height=50>
+                            <img class="individual-skill" src="assets/nodejs.png" alt="NodeJS" height=50>
+                            <p class="description">Github, VSCode, NodeJS</p>
+                        </div>
+                    </div>
+                    <div class="skill-div">
+                        <p class="title">Skills from Academic Experience</p>
+                        <div class="skill">
+                            <img class="individual-skill" src="assets/python.png" alt="Python" height=50>
+                            <img class="individual-skill" src="assets/java.png" alt="Java" height=50>
+                            <img class="individual-skill" src="assets/cplusplus.png" alt="C++" height=50>
+                            <p class="description">Python, Java, C++</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page projects" id="projects">
+                <p class="title">My Projects</p>
+                <div class="project-div">
+                    <a class="project" href="https://github.com/brilam8/cse110-w21-group20/" target="_blank"><img src="assets/wepomo.png" alt="wepomo" height=200></a>
+                    <a class="project" href="https://github.com/tommytran8/guessdraw.io" target="_blank"><img src="./assets/guessdraw.png" alt="guessdraw.io" height=200></a>
+                    <a class="project" href="https://github.com/tommytran8/pathfinder" target="_blank"><img src="./assets/pathfinder.png" alt="PathFinder" height=200></a>
+                    <a class="project" href="https://github.com/tommytran8/sudoku" target="_blank"><img src="./assets/sudoku.png" alt="Sudoku" height=200></a>
+                </div>
+            </section>
+        </main>
+        <script src="./main.js"></script>
+    </body>
+<html>
