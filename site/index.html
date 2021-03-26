@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="./style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"/>
         <link rel="icon" type="image/png" href="./assets/mylogo2.png">
         <title>Tommy</title>
@@ -48,22 +50,24 @@
             }
 
             .page{
-                height: 100vh;
+                /* height: 100vh; */
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
             }
 
-            .page:nth-child(3){
+
+            .page:nth-child(2){
                 background-color: #0e3e86;
                 color: white;
             }
-            .page:nth-child(5){
+            .page:nth-child(4){
                 background-color: #0e3e86;
                 color: white;
             }
 
-            .page:nth-child(even){
+            .page:nth-child(odd){
                 color: black;
                 background-color: #ffe4b4;
             }
@@ -77,13 +81,28 @@
                 animation: changeColor 0.3s ease-in-out 6.1s forwards;
             }
 
-            .page:nth-child(odd) .title {
-                color: #ffe4b4;
-                font-size: 40px;
-            } 
+            .profile {
+                height: 100vh;
+                min-height: 500px;
+            }
+
+            .about, .skills {
+                padding-bottom: 4vh;
+            }
             .page:nth-child(even) .title {
-                color: #0e3e86;
+                color: #ffe4b4;
+                font-family: 'Merriweather', serif;
                 font-size: 40px;
+                font-weight: bolder;
+            } 
+            .page:nth-child(odd) .title {
+                color: #0e3e86;
+                font-family: 'Merriweather', serif;
+                font-size: 40px;
+                font-weight: bolder;
+            }
+            .page:nth-child(2) .title {
+                color: white;
             }
 
             .welcome {
@@ -136,7 +155,7 @@
             }
 
             .skill-div {
-                width: 200px;
+                width: 250px;
             }
 
             .skill-div, .about-div, .skill-container {
@@ -151,7 +170,7 @@
                 justify-content: space-between;
             }
 
-            .skill {
+            .flex-row {
                 display: flex;
                 flex-direction: row;
             }
@@ -232,6 +251,32 @@
                 border-radius: 10%;
             }
 
+            .links > a {
+                margin: 0 5px;
+            }
+
+            .project-div {
+                margin: 10px 0 40px 0;
+            }
+
+            .project-div > .description {
+                width: 80vw;
+            }
+
+            .description {
+                font-size: larger;
+            }
+
+            .skill-des {
+                font-weight: bolder;
+            }
+
+            @media only screen and (max-height: 500px) { /*need to fix resizing window*/
+                nav {
+                    transform: translate(90vw, 500px);
+                }
+            }
+
             @keyframes changeColor{
                 from {color:#0e3e86;}
                 to {background-color: #0e3e86;
@@ -282,21 +327,19 @@
                     transform: translateY(0vh)}
             }
         </style>
-        <a id="arrow-container" class="arrow-container" href="#profile">
+        <a id="arrow-container" class="arrow-container" href="#skills">
             <svg class="intro-arrow" width="42" height="29" viewBox="0 0 42 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.8652 28.7383L0.210938 7.9082L7.85742 0.261719L20.8652 13.2695L33.9609 0.261719L41.6074 7.9082L20.8652 28.7383Z" fill="white"/>
             </svg>
         </a>
         <nav id="nav-bar">
-            <a id=to-home href="#intro">Home</a>
             <a id="to-profile" href="#profile">Profile</a>
-            <a id="to-about" href="#about">About Me</a>
             <a id="to-skills" href="#skills">Skills</a>
+            <a id="to-about" href="#about">About Me</a>
             <a id="to-projects" href="#projects">Projects</a>
         </nav>
         <main>
             <section id="intro" class="page intro">
-                <p id="intro-welcome" class="welcome">Welcome to my website</p>
                 <p id="intro-welcome-before" class="p-intro">Welcome to my website</p>
                 <svg id="intro-svg" class="intro-svg" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="100" height="100" rx="10" fill="#0e3e86"/>
@@ -315,13 +358,48 @@
                 <p class="title">Tommy Tran</p>
                 <p class="description">Student at UCSD majoring in Mathematics-Computer Science</p>
                 <div class="links">
-                    <a href="https://github.com/tommytran8" target="_blank"><img id="git-png" src="./assets/github.png" alt="Github" height=50></a>
-                    <a href="https://www.linkedin.com/in/tommy-tran-20210b177/" target="_blank"><img id="linkedin-png" src="./assets/linkedin.png" alt="Linkedin" height=50></a>
-                    <a href="https://www.instagram.com/tommy.traan/" target="_blank"><img id="insta-png" src="./assets/insta.png" alt="Instagram" height=50></a>
-                    <a href="./assets/Resume.pdf" target="_blank"><img src="./assets/resume.png" alt="Resume" height=50></a>
+                    <a href="https://github.com/tommytran8" target="_blank"><img id="git-png" src="./assets/github.png" alt="Github" height=55></a>
+                    <a href="https://www.linkedin.com/in/tommy-tran-20210b177/" target="_blank"><img id="linkedin-png" src="./assets/linkedin.png" alt="Linkedin" height=55></a>
+                    <a href="https://www.instagram.com/tommy.traan/" target="_blank"><img id="insta-png" src="./assets/insta.png" alt="Instagram" height=55></a>
+                    <a href="./assets/Resume.pdf" target="_blank"><img src="./assets/resume.png" alt="Resume" height=55></a>
                 </div>
             </section>
                 
+            <section class="page skills" id="skills">
+                
+                <div class="skill-container">
+                    <div class="skill-div">
+                        <p class="title">Favored Languages</p>
+                        <div class="skill flex-row">
+                            <img class="individual-skill" src="assets/javascript.png" alt="Javascript" height=50>
+                            <img class="individual-skill" src="assets/html.png" alt="HTML5" height=50>
+                            <img class="individual-skill" src="assets/css.png" alt="CSS3" height=50>
+                        </div>
+                        <p class="description skill-des">Javascript, HTML5, CSS</p>
+                        <p class="description">These are the languages that I am most comfortable with and have the most proficiency in.</p>
+                    </div>
+                    <div class="skill-div">
+                        <p class="title">Favored Tools</p>
+                        <div class="skill flex-row">
+                            <img class="individual-skill" src="assets/github.png" alt="Github" height=50>
+                            <img class="individual-skill" src="assets/vscode.png" alt="VSCode" height=50>
+                            <img class="individual-skill" src="assets/nodejs.png" alt="NodeJS" height=50>
+                        </div>
+                        <p class="description skill-des">Github, VSCode, NodeJS</p>
+                        <p class="description">These are the tools that I utilize for development.</p>
+                    </div>
+                    <div class="skill-div">
+                        <p class="title">Academic Experience</p>
+                        <div class="skill flex-row">
+                            <img class="individual-skill" src="assets/python.png" alt="Python" height=50>
+                            <img class="individual-skill" src="assets/java.png" alt="Java" height=50>
+                            <img class="individual-skill" src="assets/cplusplus.png" alt="C++" height=50>
+                        </div>
+                        <p class="description skill-des">Python, Java, C++</p>
+                        <p class="description">These are the languages that I only use in academic environments. I could adequately use these languages if asked.</p>
+                    </div>
+                </div>
+            </section>
             <section class="page about" id="about">
                 
                 <div class="about-div">
@@ -332,47 +410,37 @@
                     <p class="title">Hobbies</p>
                     <p class="description">Badminton, Anime, Gaming, and Working Out</p>
                 </div>
-            </section>
-            <section class="page skills" id="skills">
-                
-                <div class="skill-container">
-                    <div class="skill-div">
-                        <p class="title">Skills</p>
-                        <div class="skill">
-                            <img class="individual-skill" src="assets/javascript.png" alt="Javascript" height=50>
-                            <img class="individual-skill" src="assets/html.png" alt="HTML5" height=50>
-                            <img class="individual-skill" src="assets/css.png" alt="CSS3" height=50>
-                        </div>
-                        <p class="description">Javascript, HTML5, CSS</p>
-                    </div>
-                    <div class="skill-div">
-                        <p class="title">Tools</p>
-                        <div class="skill">
-                            <img class="individual-skill" src="assets/github.png" alt="Github" height=50>
-                            <img class="individual-skill" src="assets/vscode.png" alt="VSCode" height=50>
-                            <img class="individual-skill" src="assets/nodejs.png" alt="NodeJS" height=50>
-                        </div>
-                        <p class="description">Github, VSCode, NodeJS</p>
-                    </div>
-                    <div class="skill-div">
-                        <p class="title">Academic Experience</p>
-                        <div class="skill">
-                            <img class="individual-skill" src="assets/python.png" alt="Python" height=50>
-                            <img class="individual-skill" src="assets/java.png" alt="Java" height=50>
-                            <img class="individual-skill" src="assets/cplusplus.png" alt="C++" height=50>
-                        </div>
-                        <p class="description">Python, Java, C++</p>
-                    </div>
+                <div class="flex-row" style="align-items: center;">
+                    <img src="./assets/badminton.gif" alt="badminton" style="filter: invert(1); margin: 0 15px;">
+                    <img src="assets/switch.png" alt="games" style="filter: invert(1); margin: 0 15px;" height=80>
+                    <img src="assets/gym.png" alt="workout" style="filter: invert(1); margin: 0 15px;" height=80>
                 </div>
+        
             </section>
             <section class="page projects" id="projects">
                 <p class="title">My Projects</p>
                 <div class="project-div">
                     <a class="project" href="https://github.com/brilam8/cse110-w21-group20/" target="_blank"><img src="assets/wepomo.png" alt="wepomo" height=200></a>
+                    <p class="description"><b>Web based Pomodoro Timer (wepomo)</b> - group project in the CSE 110 course. Course focuses on team development, agile methods, and use of tools such as IDE’s, version control, and test harnesses. My primary role in the project was to design and build the 3 of the 6 pages, build custom components, and develop the CI/CD pipeline with Github Actions workflows. For the 3 pages I also made unit and UI tests with the testing tools within the pipeline. I also learned how to utilize APIs to provide more accessibility for users.
+                    </p>
+                </div>
+                <div class="project-div">
                     <a class="project" href="https://github.com/tommytran8/guessdraw.io" target="_blank"><img src="./assets/guessdraw.PNG" alt="guessdraw.io" height=200></a>
+                    <p class="description"><b>Guessdraw.io</b> - Web based Pictionary like game to familiarize myself with using servers, Node.js and Socket.io.  Contains real-time communication between clients connected to the server when drawing and chatting.
+                    </p>
+                </div>
+                <div class="project-div">
+                    <a class="project" href="https://github.com/tommytran8/haskell_project" target="_blank"><img src="./assets/haskell.png" alt="haskell" height=200></a>
+                    <p class="description"><b>Custom Programming Language</b> - Built Basic Language called Nano Language using Haskell for a final project that could do lambda calculus computation and operator operations. Uses fundamentals such as inheritance and polymorphism.
+                    </p>
+                </div>
+                <div class="project-div">
                     <a class="project" href="https://github.com/tommytran8/pathfinder" target="_blank"><img src="./assets/pathfinder.PNG" alt="PathFinder" height=200></a>
                     <a class="project" href="https://github.com/tommytran8/sudoku" target="_blank"><img src="./assets/sudoku.PNG" alt="Sudoku" height=200></a>
+                    <p class="description"><b>Several Mini-Projects: A* path search algorithm, Sudoku, Snake, Pong Game, and Calculator</b> - projects to familiarize myself with javascript, html, and css. Utilizes search and backtracking algorithms and certain data structures.
+                    </p>
                 </div>
+                
             </section>
         </main>
         <script src="./main.js"></script>
