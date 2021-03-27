@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
     skills.style.display = "flex";
     projects.style.display = "flex";
     arrow.style.display = "flex";
-  }, 6500);
+  }, 6000);
 });
 
 
@@ -68,7 +68,7 @@ function getclientHeight(x1, x2){
   for (let i = x1; i < x2; i++){
     result += pageslist[i].clientHeight;
   }
-  return result;
+  return result - 50;
 }
 
 
