@@ -168,13 +168,13 @@
             .skill-container {
                 flex-direction: row;
                 justify-content: space-between;
-                flex-wrap: wrap;
+                /* flex-wrap: wrap; */
             }
 
             .flex-row {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
+                /* flex-wrap: wrap; */
             }
 
             .skill > img {
@@ -273,43 +273,58 @@
                 font-weight: bolder;
             }
 
-            @media only screen and (max-height: 500px) { /*need to fix resizing window*/
-                nav {
-                    transform: translate(90vw, 500px);
-                }
+            .about .flex-row {
+                width : 70%;
             }
 
-            @media only screen and (max-width: 600px) { /*need to fix resizing window*/
+            @media only screen and (max-width: 550px) { 
                 nav, .arrow-container {
                     display: none;
                 }
 
                 @keyframes turn {
-                0% { visibility: visible; 
-                    transform: translateY(-1000px);
+                    0% { visibility: visible; 
+                        transform: translateY(-1000px);
+                    }
+                    30%{
+                        visibility: visible; 
+                        transform: translateY(0);
+                    }
+                    65% { visibility: visible; 
+                        transform: rotate(0deg) scale(1);
+                    }
+                    85% {
+                        visibility: visible; 
+                        transform: rotate(360deg) scale(7);
+                    }
+                    100% { visibility: hidden; 
+                        transform: rotate(360deg) scale(0);
+                    }
                 }
-                30%{
-                    visibility: visible; 
-                    transform: translateY(0);
+
+                .about img:nth-child(1) {
+                    transform: scale(0.5);
                 }
-                65% { visibility: visible; 
-                    transform: rotate(0deg) scale(1);
-                }
-                85% {
-                    visibility: visible; 
-                    transform: rotate(360deg) scale(7);
-                }
-                100% { visibility: hidden; 
-                    transform: rotate(360deg) scale(0);
-                }
-            }
+            
             }
 
-            @media only screen and (max-width: 1000px) { /*need to fix resizing window*/
-                nav > a {
-                    width: 50px;
-                    height: 40px;
+            @media only screen and (max-width: 1000px) { 
+                nav {
+                    transform: translate(82vw, 100vh);
                 }
+
+                .arrow-container {
+                    transform: translate(82vw, 90vh);
+                }
+
+                .description, .project-div > .description {
+                    width: 60vw;
+                }
+
+                .skill-container, .about > .flex-row {
+                    flex-direction: column;
+                }
+
             }
 
             @keyframes changeColor{
