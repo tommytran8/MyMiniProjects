@@ -301,9 +301,56 @@
                 .description, .project-div > .description {
                     width: 60vw;
                 }
+                
 
                 .skill-container, .about > .flex-row {
                     flex-direction: column;
+                }
+
+            }
+
+            @media only screen and (min-width: 2000px) { 
+                img, p, svg{
+                    transform: scale(1.5);
+                }
+                img {
+                    margin: 3vh;
+                }
+                .project-div > .description, .about-div > .description {
+                    width: 50vw;
+                }
+
+                .box-container {
+                    width: 50%;
+                }
+
+                .box-container > .p-intro {
+                    transform: translateX(0vw);
+                }
+
+            }
+
+            @media only screen and (min-width: 4500px) { 
+                img, p, svg{
+                    transform: scale(2.5);
+                }
+
+                .title, .description {
+                    margin: 3vh
+                }
+                img {
+                    margin: 7vh;
+                }
+                .project-div > .description, .about-div > .description {
+                    width: 30vw;
+                }
+
+                .box-container {
+                    width: 40%;
+                }
+
+                .box-container > .p-intro {
+                    transform: translateX(0vw);
                 }
 
             }

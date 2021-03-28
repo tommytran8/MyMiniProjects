@@ -89,48 +89,21 @@ function getclientHeight(x1, x2){
 function setNavLoc(bool){
   if (bool){
     nav.style.position = "fixed";
-    if (profile.clientHeight <= 500){
-      if (profile.clientWidth < 1000) {
-        nav.style.transform = "translate(82vw, 25px)";
-        arrow.style.transform = "translate(82vw, 450px)";
-      } 
-      else {
-        nav.style.transform = "translate(90vw, 25px)";
-        arrow.style.transform = "translate(90vw, 450px)";
-      }
-    }
-    else {
-      if (profile.clientWidth < 1000) {
-        nav.style.transform = "translate(82vw, 5vh)";
-        arrow.style.transform = "translate(82vw, 90vh)";
-      } 
-      else {
-        nav.style.transform = "translate(90vw, 5vh)";
-        arrow.style.transform = "translate(90vw, 90vh)";
-      }
-    }
+    profile.clientHeight <= 500 ? setNavBar("25px", "450px") : setNavBar("5vh", "90vh");
   }
   else{
     nav.style.position = "absolute";
-    if (profile.clientHeight <= 500){
-      if (profile.clientWidth < 1000) {
-        nav.style.transform = "translate(82vw, 500px)";
-        arrow.style.transform = "translate(82vw, 450px)";
-      }
-      else {
-        nav.style.transform = "translate(90vw, 500px)";
-        arrow.style.transform = "translate(90vw, 450px)";
-      }
-    }
-    else {
-      if (profile.clientWidth < 1000) {
-        nav.style.transform = "translate(82vw, 100vh)";
-        arrow.style.transform = "translate(82vw, 90vh)";
-      }
-      else { 
-        nav.style.transform = "translate(90vw, 100vh)";
-        arrow.style.transform = "translate(90vw, 90vh)";
-      }
-    }
+    profile.clientHeight <= 500 ? setNavBar("500px", "450px") : setNavBar("100vh", "90vh");
+  }
+}
+
+function setNavBar(y1, y2){
+  if (profile.clientWidth < 1000) {
+    nav.style.transform = `translate(82vw, ${y1})`;
+    arrow.style.transform = `translate(82vw, ${y2})`;
+  }
+  else {
+    nav.style.transform = `translate(90vw, ${y1})`;
+    arrow.style.transform = `translate(90vw, ${y2})`;
   }
 }
