@@ -117,11 +117,11 @@
                 animation-delay: 1.3s;
                 animation-fill-mode: forwards;
             }
-            
+/*             
             .intro-svg {
                 visibility: hidden;
                 animation: turn 3.3s ease-in 2.7s forwards;
-            }
+            } */
 
             .arrow-container {
                 display: none;
@@ -280,24 +280,24 @@
                 transform: translateX(-50px) scale(2.5);
             }
 
-            svg:nth-child(1) path{
+            .svg-container svg:nth-child(1) path{
                 fill:white;
             }
 
-            svg:nth-child(1) {
+            .svg-container svg:nth-child(1) {
                 visibility: hidden;
                 opacity: 0;
                 transform: translateX(-140px) scale(2.5);
                 transition: all 0.5s ease-out 0.2s;
             }
-            svg:nth-child(2){
+            .svg-container svg:nth-child(2){
                 visibility: hidden;
                 opacity: 1;
                 transform: translateX(0px) scale(2.5);
                 transition: all 0.5s ease-in-out 0s;
                 
             }
-            svg:nth-child(3) {
+            .svg-container svg:nth-child(3) {
                 visibility: hidden;
                 opacity: 1;
                 transform: translateX(10px) scale(2.5);
@@ -347,6 +347,9 @@
                 .description, .project-div > .description {
                     width: 60vw;
                 }
+                .nonmobile-intro {
+                    display: inline;
+                }
                 
 
                 .skill-container, .about > .flex-row {
@@ -356,7 +359,7 @@
             }
 
             @media only screen and (min-width: 2000px) { 
-                img, p, svg{
+                img, p, .arrow-container svg{
                     transform: scale(1.5);
                 }
                 img {
@@ -377,7 +380,7 @@
             }
 
             @media only screen and (min-width: 4500px) { 
-                img, p, .profile svg{
+                img, p, .arrow-container svg{
                     transform: scale(2.5);
                 }
 
