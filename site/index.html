@@ -276,7 +276,7 @@
                 justify-content: center;
             }
 
-            svg {
+            .svg-container svg {
                 transform: translateX(-50px) scale(2.5);
             }
 
@@ -325,7 +325,7 @@
             }
 
             @media only screen and (max-width: 550px) { 
-                nav, .arrow-container {
+                nav, .arrow-container, .nonmobile-intro {
                     display: none;
                 }
 
@@ -377,7 +377,7 @@
             }
 
             @media only screen and (min-width: 4500px) { 
-                img, p, svg{
+                img, p, .profile svg{
                     transform: scale(2.5);
                 }
 
@@ -412,23 +412,6 @@
                 to {overflow:visible;}
             }
 
-            /* @keyframes turn {
-                0% { visibility: hidden; 
-                    opacity: 0;
-                    transform: translateX(-200vw) scale(2.5);
-                }
-                80% {
-                    visibility: visible;
-                    opacity: 0;
-                    transform: translateX(-5vw) scale(2.5);
-                }
-                100%{
-                    visibility: visible; 
-                    opacity: 1;
-                    transform: translateX(0) scale(2.5);
-                }
-
-            } */
 
             @keyframes arrow {
                 0% {transform: translate(0, 0vh);}
@@ -520,7 +503,7 @@
                 
 
                 <div id="intro-text"class="box-container">
-                    <p class="p-intro"><span>W</span><span>e</span><span>l</span> <span>c</span><span>o</span><span>m</span> <span style="margin-right: 5px;">e</span> <span>T</span> <span style="margin-right: 5px;">o</span> <span>M</span> <span style="margin-right: 5px;">y</span>  <span>Website</span></p>
+                    <p class="p-intro"><span>W</span><span>e</span><span>l</span> <span>c</span><span>o</span><span>m</span> <span style="margin-right: 5px;">e</span> <span class="nonmobile-intro"><span>T</span> <span style="margin-right: 5px;">o</span> <span>M</span> <span style="margin-right: 5px;">y</span>  <span>Website</span></span></p>
                     <div class="line"></div>
                 </div>
             </section>
