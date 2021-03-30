@@ -58,11 +58,7 @@
             }
 
 
-            .page:nth-child(2){
-                background-color: #0e3e86;
-                color: white;
-            }
-            .page:nth-child(4){
+            .page:nth-child(even){
                 background-color: #0e3e86;
                 color: white;
             }
@@ -78,7 +74,7 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 align-items: center;
-                animation: changeColor 0.3s ease-in-out 5.5s forwards;
+                /* transition: all 0.3s ease-in-out; */
             }
 
             .profile {
@@ -142,11 +138,13 @@
             }
 
             .line {
-                width: 100%;
+                background: #0E3E86;
+                box-shadow: 0px 6px 4px rgba(0, 56, 255, 0.25);
+                border-radius: 20px;
+                width: 0%;
                 height: 20px;
-                background-color: #0e3e86;
-                transform: translateY(60vh);
-                animation: intro ease-in-out .9s forwards;
+                animation: intro 0.9s ease-in-out .4s forwards;
+                
             }
 
             .about-div, .skill-container{
@@ -278,6 +276,54 @@
                 justify-content: center;
             }
 
+            svg {
+                transform: translateX(-50px) scale(2.5);
+            }
+
+            svg:nth-child(1) path{
+                fill:white;
+            }
+
+            svg:nth-child(1) {
+                visibility: hidden;
+                opacity: 0;
+                transform: translateX(-140px) scale(2.5);
+                transition: all 0.5s ease-out 0.2s;
+            }
+            svg:nth-child(2){
+                visibility: hidden;
+                opacity: 1;
+                transform: translateX(0px) scale(2.5);
+                transition: all 0.5s ease-in-out 0s;
+                
+            }
+            svg:nth-child(3) {
+                visibility: hidden;
+                opacity: 1;
+                transform: translateX(10px) scale(2.5);
+                transition: all 0.5s ease-in 0s;
+            }
+
+            .svg-container:hover svg:nth-child(3){
+                transform: translateX(100px) scale(2.5);
+                opacity: 0;
+            }
+
+            .svg-container:hover svg:nth-child(2){
+                transform: translateX(40px) scale(2.5);
+                opacity: 1;
+            }
+            
+            .svg-container:hover svg:nth-child(1){
+                transform: translateX(35px) scale(2.5);
+                opacity: 1;
+            }
+
+            .svg-container:hover svg:nth-child(2) path{
+                fill:#0e3e86;
+                fill-opacity: 1;
+            }
+
             @media only screen and (max-width: 550px) { 
                 nav, .arrow-container {
                     display: none;
@@ -366,25 +412,23 @@
                 to {overflow:visible;}
             }
 
-            @keyframes turn {
-                0% { visibility: visible; 
-                    transform: translateY(-1000px);
+            /* @keyframes turn {
+                0% { visibility: hidden; 
+                    opacity: 0;
+                    transform: translateX(-200vw) scale(2.5);
                 }
-                30%{
+                80% {
+                    visibility: visible;
+                    opacity: 0;
+                    transform: translateX(-5vw) scale(2.5);
+                }
+                100%{
                     visibility: visible; 
-                    transform: translateY(0);
+                    opacity: 1;
+                    transform: translateX(0) scale(2.5);
                 }
-                65% { visibility: visible; 
-                    transform: rotate(0deg) scale(1);
-                }
-                95% {
-                    visibility: visible; 
-                    transform: rotate(360deg) scale(0);
-                }
-                100% { visibility: hidden; 
-                    transform: rotate(360deg) scale(0);
-                }
-            }
+
+            } */
 
             @keyframes arrow {
                 0% {transform: translate(0, 0vh);}
@@ -393,9 +437,8 @@
             }
 
             @keyframes intro {
-                0% {transform: translateY(60vh)}
-                60% {transform: translateY(0vh)}
-                100% {transform: translateY(0vh)}
+                0% {width: 0%}
+                100% {width: 100%}
             }
 
             @keyframes pintro {
@@ -418,14 +461,66 @@
         </nav>
         <main>
             <section id="intro" class="page intro">
-                <p id="intro-welcome-before" class="p-intro">Welcome to my website</p>
-                <svg id="intro-svg" class="intro-svg" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="10" fill="#0e3e86"/>
-                    <path d="M70.7344 34.54H55.4902V76H45.2363V34.54H30.1973V26.2344H70.7344V34.54Z" fill="white"/>
-                </svg>
+                <!-- <p id="intro-welcome-before" class="p-intro">Click to proceed</p> -->
+                <div id="svg-container" class="svg-container">
+
+                    <svg width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d)">
+                        <path d="M37 18.2679C38.3333 19.0377 38.3333 20.9623 37 21.7321L7 39.0526C5.66667 39.8224 4 38.8601 4 37.3205L4 2.67949C4 1.13989 5.66667 0.177642 7 0.947442L37 18.2679Z" fill="#0023A0" fill-opacity="0.71"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d" x="0" y="0.676506" width="42" height="46.647" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                        
+    
+                    <svg width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d)">
+                        <path d="M37 18.0526C38.3333 18.8224 38.3333 20.7469 37 21.5167L7 38.8372C5.66667 39.607 4 38.6447 4 37.1051V2.46409C4 0.924494 5.66667 -0.0377557 7 0.732045L37 18.0526Z" fill="#3964FF" fill-opacity="0.64"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d" x="0" y="0.461113" width="42" height="46.647" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                    <svg width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d)">
+                        <path d="M37 18.2679C38.3333 19.0377 38.3333 20.9623 37 21.7321L7 39.0526C5.66667 39.8224 4 38.8601 4 37.3205L4 2.67949C4 1.13989 5.66667 0.177642 7 0.947442L37 18.2679Z" fill="#0023A0" fill-opacity="0.71"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d" x="0" y="0.676506" width="42" height="46.647" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+            
                     
+                </div>
+                
+
                 <div id="intro-text"class="box-container">
-                    <p class="p-intro"><span style="margin-right: 5px;">I</span><span>a</span><span style="margin-right: 5px;">m</span> <span>T</span><span>o</span><span>m</span> <span>m</span> <span style="margin-right: 5px;">y</span> <span>T</span> <span>r</span> <span>a</span>  <span>n</span></p>
+                    <p class="p-intro"><span>W</span><span>e</span><span>l</span> <span>c</span><span>o</span><span>m</span> <span style="margin-right: 5px;">e</span> <span>T</span> <span style="margin-right: 5px;">o</span> <span>M</span> <span style="margin-right: 5px;">y</span>  <span>Website</span></p>
                     <div class="line"></div>
                 </div>
             </section>

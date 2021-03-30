@@ -9,18 +9,27 @@ const arrow = document.getElementById("arrow-container");
 const pageslist = [profile,skills,  about, projects];
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(()=>{
-    intro.style.display = "none"; 
-    profile.style.display = "flex";
-    about.style.display = "flex";
-    skills.style.display = "flex";
-    projects.style.display = "flex";
-
-    if (profile.clientWidth > 550) {
-      nav.style.display = "flex";
-      arrow.style.display = "flex";
-    }
-  }, 6000);
+  for (svg of document.getElementById("svg-container").children){
+    svg.style.visibility = "visible";
+    svg.addEventListener("click", ()=> {
+      intro.style.display = "none"; 
+      profile.style.display = "flex";
+      about.style.display = "flex";
+      skills.style.display = "flex";
+      projects.style.display = "flex";
+  
+      if (profile.clientWidth > 550) {
+        nav.style.display = "flex";
+        arrow.style.display = "flex";
+      }
+    });
+  }
+}, 3500)
+  
 });
+
+
+
 
 window.addEventListener("resize", ()=>{
   if (profile.clientWidth > 550) {
