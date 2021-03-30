@@ -184,6 +184,7 @@
                 font-weight: bold;
                 font-size: 30px;
                 display: flex;
+                word-wrap: normal;
             }
 
             .p-intro > span:nth-child(1) {
@@ -325,7 +326,7 @@
             }
 
             @media only screen and (max-width: 550px) { 
-                nav, .arrow-container, .nonmobile-intro {
+                nav, .arrow-container{
                     display: none;
                 }
 
@@ -347,10 +348,6 @@
                 .description, .project-div > .description {
                     width: 60vw;
                 }
-                .nonmobile-intro {
-                    display: inline;
-                }
-                
 
                 .skill-container, .about > .flex-row {
                     flex-direction: column;
